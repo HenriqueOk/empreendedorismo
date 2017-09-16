@@ -1,0 +1,3 @@
+class Championship < ApplicationRecord
+  
+end
