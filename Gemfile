@@ -8,6 +8,7 @@ end
 gem "slim-rails"
 gem "twitter-bootstrap-rails"
 gem "font-awesome-rails"
+gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
