@@ -1,0 +1,4 @@
+if (confirm('Não existe um campeonato com o nome "<%= @championship_name %>".\nDeseja cria-lo?')) {
+  $('.js-search-form').html('<%= escape_javascript(render partial: "championships/new") %>');
+  $('.js-new-form').submit();
+}

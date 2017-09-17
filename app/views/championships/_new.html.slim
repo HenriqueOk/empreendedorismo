@@ -1,0 +1,7 @@
+= form_tag championships_path, class: "js-new-form" do |f|
+  .row
+    .col-md-10
+      = text_field_tag(:name, @championship_name, class: "form-control", placeholder: 'Nome do campeonato')
+    .col-md-2
+      = button_tag type: 'submit', class: 'btn btn-success' do
+        i.fa.fa-sign-in

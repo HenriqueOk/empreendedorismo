@@ -4,14 +4,27 @@ class ChampionshipsController < ApplicationController
   end
 
   def find
-  end
-
-  def join
-
-  end
-
-  def create
+    @championship = Championship.where(name: params[:name]).first
     
+    if @championship.present?
+      redirect_to championship_path(@championship.id)
+    else
+      @championship_name = params[:name]
+      render :confirm_creation
+    end
+  end
+  
+  def join
+    
+  end
+  
+  def create
+    championship = Championship.create(name: params[:name])
+    redirect_to championship_path(championship.id)
+  end
+
+  def show
+    @championship = Championship.find(params[:id])
   end
 
 end
