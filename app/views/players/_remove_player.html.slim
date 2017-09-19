@@ -1,0 +1,4 @@
+= form_tag championship_player_path(championship_id: @player.championship_id, id: @player.id), method: :delete
+  = @player.name
+  = button_tag type: 'submit', class: 'btn btn-danger pull-right' do
+    i.fa.fa-minus

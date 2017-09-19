@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     collection do
       post :find
     end
+
+    resources :players, only: [:create, :destroy]
   end
 
 end

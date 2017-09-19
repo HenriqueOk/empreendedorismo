@@ -14,17 +14,12 @@ class ChampionshipsController < ApplicationController
     end
   end
   
-  def join
-    
-  end
-  
   def create
-    championship = Championship.create(name: params[:name])
-    redirect_to championship_path(championship.id)
+    @championship_id = Championship.create(name: params[:name]).id
+    render :add_players
   end
 
   def show
     @championship = Championship.find(params[:id])
   end
-
 end
