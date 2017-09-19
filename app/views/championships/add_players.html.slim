@@ -1,6 +1,8 @@
 .row
   .col-md-6.col-sm-offset-3
-    = form_tag championship_players_path(championship_id: @championship_id), remote: true do |f|
+    h1
+      = @championship.name
+    = form_tag championship_players_path(championship_id: @championship.id), remote: true do |f|
       .row
         .col-md-10
           = text_field_tag(:name, nil, class: "form-control js-player-name-input", placeholder: 'Nome do jogador')

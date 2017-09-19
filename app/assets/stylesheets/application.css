@@ -14,3 +14,7 @@
  *= require_self
  *= require font-awesome
  */
+
+ .mar-top {
+   margin-top: 10px;
+ }

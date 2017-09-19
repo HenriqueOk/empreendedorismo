@@ -15,7 +15,7 @@ class ChampionshipsController < ApplicationController
   end
   
   def create
-    @championship_id = Championship.create(name: params[:name]).id
+    @championship = Championship.create(name: params[:name])
     render :add_players
   end
 
