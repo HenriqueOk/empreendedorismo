@@ -12,8 +12,14 @@
     = form_tag create_many_championship_players_path(championship_id: @championship.id), remote: true do |f|
       .row.mar-top
         .col-md-10
-          = number_field_tag :players_count, nil, class: 'form-control', placeholder: 'Insira vários jogadores! Me diga quantos =)'
+          = number_field_tag :players_count, nil, class: 'form-control js-many-players-input', placeholder: 'Insira vários jogadores! Me diga quantos =)'
         .col-md-2
           = button_tag type: 'submit', class: 'btn btn-success' do
             i.fa.fa-plus
     .js-player-list
+
+
+.row
+  .col-md-6.col-sm-offset-3
+    span.btn.btn-primary.pull-right.mar-top
+      | Criar campeonato
