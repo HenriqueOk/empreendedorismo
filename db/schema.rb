@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170916223644) do
+ActiveRecord::Schema.define(version: 20170926231733) do
+
+  create_table "brackets", force: :cascade do |t|
+    t.integer "championship_id"
+    t.integer "player_1_id"
+    t.integer "player_2_id"
+    t.integer "winner_id"
+    t.integer "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["championship_id"], name: "index_brackets_on_championship_id"
+    t.index ["parent_id"], name: "index_brackets_on_parent_id"
+    t.index ["player_1_id"], name: "index_brackets_on_player_1_id"
+    t.index ["player_2_id"], name: "index_brackets_on_player_2_id"
+    t.index ["winner_id"], name: "index_brackets_on_winner_id"
+  end
 
   create_table "championships", force: :cascade do |t|
     t.string "name"
