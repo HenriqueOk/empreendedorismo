@@ -1,0 +1,5 @@
+<% @players.each do |player| %>
+  $('.js-player-list').append("<%= escape_javascript(render partial: 'players/remove_player', locals: { player: player }) %>")
+<% end %>
+$('.js-player-name-input').val('');
+$('.js-player-name-input').focus();

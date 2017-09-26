@@ -9,5 +9,11 @@
         .col-md-2
           = button_tag type: 'submit', class: 'btn btn-success' do
             i.fa.fa-plus
-
+    = form_tag create_many_championship_players_path(championship_id: @championship.id), remote: true do |f|
+      .row
+        .col-md-10
+          = number_field_tag :players_count, nil, class: 'form-control'
+        .col-md-2
+          = button_tag type: 'submit', class: 'btn btn-success' do
+            i.fa.fa-plus
     .js-player-list
