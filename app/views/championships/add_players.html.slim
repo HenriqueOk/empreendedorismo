@@ -21,5 +21,6 @@
 
 .row
   .col-md-6.col-sm-offset-3
-    span.btn.btn-primary.pull-right.mar-top
-      | Criar campeonato
+    = form_tag finish_creation_championship_path(id: @championship.id), method: :put do
+      = button_tag type: 'submit', class: 'btn btn-primary pull-right mar-top'
+        | Criar campeonato
