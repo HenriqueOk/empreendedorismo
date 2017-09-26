@@ -7,7 +7,11 @@ Rails.application.routes.draw do
       post :find
     end
 
-    resources :players, only: [:create, :destroy]
+    resources :players, only: [:create, :destroy] do
+      collection do
+        post :create_many
+      end
+    end
   end
 
 end

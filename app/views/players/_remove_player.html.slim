@@ -1,6 +1,6 @@
-= form_tag championship_player_path(championship_id: @player.championship_id, id: @player.id), method: :delete, class: 'row mar-top'
+= form_tag championship_player_path(championship_id: player.championship_id, id: player.id), method: :delete, class: 'row mar-top'
   .col-md-10
-    = @player.name
+    = player.name
   .col-md-2
     = button_tag type: 'submit', class: 'btn btn-xs btn-danger pull-right' do
       i.fa.fa-minus
