@@ -15,6 +15,12 @@ Rails.application.routes.draw do
         post :create_many
       end
     end
+
+  end
+  resources :brackets, only: [] do
+    member do
+      put :finish
+    end
   end
 
 end

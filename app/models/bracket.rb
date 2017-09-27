@@ -1,4 +1,5 @@
 class Bracket < ApplicationRecord
+  attr_accessor :children
 
   belongs_to :championship
   belongs_to :parent, class_name: 'Bracket', required: false

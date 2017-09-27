@@ -3,11 +3,22 @@ class Championship < ApplicationRecord
   class InvalidChampionshipType < StandardError; end;
 
   has_many :players
+  has_many :brackets
 
   validates_uniqueness_of :name
 
   def brackets?
     true
+  end
+
+  def full_loaded_final(*relations_to_include)
+    all_brackets = brackets.order(created_at: :desc).includes(*relations_to_include).to_a
+
+    all_brackets.each do |bracket|
+      bracket.children = all_brackets.select { |b| b.parent_id == bracket.id}
+    end
+
+    all_brackets.find { |bracket| bracket.parent_id.nil? }
   end
 
   def generate_brackets!
