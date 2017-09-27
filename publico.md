@@ -1,0 +1,4 @@
+- Jovens
+- Jogam jogos competitivos
+- Frequentam lojas de jogos
+- Frequentam lojas que organizam capeonatos
