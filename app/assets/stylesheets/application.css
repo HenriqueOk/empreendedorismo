@@ -15,6 +15,20 @@
  *= require font-awesome
  */
 
- .mar-top {
-   margin-top: 10px;
- }
+.mar-top {
+  margin-top: 10px;
+}
+
+body {
+  background-image: url("/assets/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  color: white;
+}
+
+.background-black {
+  background-color: rgba(0,0,0,0.8);
+  padding: 20px 0;
+}
+
