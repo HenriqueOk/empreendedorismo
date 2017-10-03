@@ -1,5 +1,6 @@
 h1.text-center
   = @championship.name
-
+.text-center
+  = image_tag "trophy.png", class: 'trophy'
 .tree
   = render_brackets(@championship)
