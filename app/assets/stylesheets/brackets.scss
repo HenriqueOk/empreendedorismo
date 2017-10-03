@@ -12,7 +12,7 @@ body {
 
 $border-width: 1px;
 $reverse: false;
-$line-color: #333;
+$line-color: #FFF;
 
 .tree {
   @if $reverse {
@@ -91,6 +91,7 @@ $line-color: #333;
   padding: .15em .25em;
   display: inline-block;
   border-radius: 5px;
+  background-color: white;
   position: relative;
   top: $border-width;
   color: #333;
