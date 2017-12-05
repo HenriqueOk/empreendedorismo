@@ -8,4 +8,6 @@ class Interest < ApplicationRecord
   scope :by_local, -> (local) do
     where('lower(local) LIKE ?', "%#{local.downcase}%")
   end
+
+  validates_presence_of :format, :local, :datetime
 end
