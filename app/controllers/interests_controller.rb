@@ -35,6 +35,13 @@ class InterestsController < ApplicationController
     redirect_to interests_path
   end
 
+  def unparticipate
+    interest = Interest.find params[:id]
+    interest.participants.delete(current_user)
+
+    redirect_to search_interests_path
+  end
+
   def permitted_params
     params.require(:interest).permit(:local, :format, :datetime)
   end

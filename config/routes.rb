@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :interests, only: [:index, :new, :create] do
     get :search, on: :collection
     put :participate, on: :member
+    delete :unparticipate, on: :member
   end
 
   resources :brackets, only: [] do
