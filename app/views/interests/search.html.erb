@@ -1,5 +1,5 @@
 <div class="well">
-  <%= form_tag interests_path, method: :get do %>
+  <%= form_tag search_interests_path, method: :get do %>
     <div class='row'>
       <div class="col-sm-4">
         <%= text_field_tag(:by_format, params[:by_format], placeholder: 'Formato', class: 'form-control') %>

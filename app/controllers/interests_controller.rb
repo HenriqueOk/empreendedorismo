@@ -4,7 +4,7 @@ class InterestsController < ApplicationController
   has_scope :by_local
 
   def index
-    @interests = apply_scopes(current_user.interests)
+    @interests = current_user.interests
   end
 
   def new
@@ -22,6 +22,10 @@ class InterestsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def search
+    @interests = apply_scopes(Interest.where('user_id != ?', current_user.id).includes(:user))
   end
 
   def permitted_params

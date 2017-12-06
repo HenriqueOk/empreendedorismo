@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   resources :championships
 
-  resources :interests, only: [:index, :new, :create]
+  resources :interests, only: [:index, :new, :create] do
+    get :search, on: :collection
+  end
 
   resources :brackets, only: [] do
     member do
