@@ -8,6 +8,7 @@
 
   <legend>Detalhes do campeonato</legend>
 
+  <%= form.input :interest_id, as: :hidden, :input_html => { :value => params[:interest_id] } %>
   <%= form.input :name, label: t('.name', default: "Nome do campeonato"), required: true %>
   <%= form.input :game, label: t('.game', default: "Formato"), placeholder: "Commander, pauper...", required: true %>
   <%= form.input :starts_at, label: t('.starts_at', default: "Data de início"), required: true %>
@@ -16,7 +17,7 @@
   
   <legend>Adicione os participantes</legend>
   
-  <%= form.association :users, label_method: :name, value_method: :id, include_blank: false, label: t('.participants', default: "Participantes") %>
+  <%= form.association :users, collection: @users, label_method: :name, value_method: :id, include_blank: false, label: t('.participants', default: "Participantes") %>
   
   <%= form.button :submit, label: t('.submit', default: "Criar campeonato"), class: 'btn btn-warning' %>
 <% end %>

@@ -1,5 +1,6 @@
 class Interest < ApplicationRecord
   belongs_to :user
+  belongs_to :championship, optional: true
   has_and_belongs_to_many :participants, class_name: 'User'
 
   scope :by_format, -> (format) do

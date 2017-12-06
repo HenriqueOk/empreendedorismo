@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get :search, on: :collection
     put :participate, on: :member
     delete :unparticipate, on: :member
+    resources :championships, only: :new
   end
 
   resources :brackets, only: [] do

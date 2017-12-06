@@ -14,6 +14,7 @@ class ChampionshipsController < ApplicationController
 
   def new
     @championship = Championship.new
+    @users = Interest.find(params[:interest_id]).participants
   end
 
   def create
@@ -48,7 +49,8 @@ class ChampionshipsController < ApplicationController
       else
         @championship.generate_brackets!
       end
-
+      interest = Interest.find(params.dig(:championship, :interest_id))
+      interest.update!(championship_id: @championship.id)
       redirect_to @championship
     else
       render :new

@@ -9,6 +9,7 @@ class Championship < ApplicationRecord
   has_many :users, through: :participants
   has_many :pontoscorridos_partidas
   has_many :brackets
+  has_one :interest
 
   accepts_nested_attributes_for :participants
 
@@ -18,6 +19,12 @@ class Championship < ApplicationRecord
 
   def finished?
     self.winner.present?
+  end
+
+  def interest_id
+    if self.interest.present?
+      self.interest.id
+    end
   end
 
   def ranking

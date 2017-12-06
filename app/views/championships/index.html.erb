@@ -18,8 +18,14 @@
         <th><%= interest.datetime %></th>
         <th><%= interest.participants.count %></th>
         <th> 
-            <%= link_to new_championship_path, class: "btn btn-success" do %>
-                <i class="glyphicon glyphicon-plus-sign"></i> Novo campeonato
+            <% if interest.championship_id.present? %>
+                <%= link_to championship_path(interest.championship_id), class: "btn btn-primary" do %>
+                    <i class="fa fa-edit"></i> Gerenciar campeonato
+                <% end %>
+            <% else %>
+                <%= link_to new_interest_championship_path(interest), class: "btn btn-success" do %>
+                    <i class="glyphicon glyphicon-plus-sign"></i> Novo campeonato
+                <% end %>
             <% end %>
         </th>
       </tr>
