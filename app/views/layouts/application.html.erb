@@ -8,13 +8,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden sidebar-hidden">
   <header class="app-header navbar">
     <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" style="visibility:hidden;">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -487,56 +487,4 @@
 
 </body>
 
-
-  <!--body>
-
-    <nav class="navbar">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to root_path, class: "logo-link" do %>
-            Magic Making
-          <% end %>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <% if user_signed_in? %>
-            <ul class="nav navbar-nav" id="menu-navbar">
-              <li class="<%=active_for('homes')%>"><%= link_to 'Home', root_path %></li>
-              <li class="<%=active_for('championships')%>"><%= link_to 'Campeonatos', championships_path %></li>
-            </ul>
-          <% end %>
-
-          <ul class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-              <li><%= link_to current_user.email, edit_user_registration_path %></li>
-              <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
-            <% else %>
-              <li><%= link_to "Inscrever-se", new_user_registration_path %></li>
-              <li><%= link_to "Entrar", new_user_session_path %></li>
-            <% end %>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
-    <div class="container">
-      <% if notice %><div class="alert alert-info"><%= notice %></div><% end %>
-      <% if alert %><div class="alert alert-warning"><%= alert %></div><% end %>
-
-      <%= yield %>
-      <!-- Codigo comentado porque aparece em todas as paginas
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
-      -->
-
-    </div><!-- /.container -->
-
-  </body-->
 </html>
