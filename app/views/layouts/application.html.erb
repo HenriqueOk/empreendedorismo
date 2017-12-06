@@ -30,6 +30,9 @@
       <li class="nav-item px-3">
         <%= link_to 'Buscar evento', search_interests_path, class: 'nav-link' %>
       </li>
+      <li class="nav-item px-3">
+        <%= link_to 'Pagamento', payments_path, class: 'nav-link' %>
+      </li>
     </ul>
     <ul class="nav navbar-nav ml-auto">
       <% if current_user.present? %>
