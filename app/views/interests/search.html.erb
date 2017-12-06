@@ -21,6 +21,7 @@
     <th>Formato</th>
     <th>Local</th>
     <th>Data e Hora</th>
+    <th></th>
   </thead>
 
   <tbody>
@@ -30,6 +31,13 @@
         <th><%= interest.format %></th>
         <th><%= interest.local %></th>
         <th><%= interest.datetime %></th>
+        <th>
+          <% if interest.participants.include?(current_user) %>
+            <%= link_to 'Perdi o interesse', participate_interest_path(interest), method: :delete, class: 'btn btn-danger'%>            
+          <% else %>
+            <%= link_to 'Participar', participate_interest_path(interest), method: :put, class: 'btn btn-success'%>
+          <% end %>
+        </th>
       </tr>
     <% end %>
   </tbody>

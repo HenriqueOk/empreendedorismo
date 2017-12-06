@@ -28,6 +28,13 @@ class InterestsController < ApplicationController
     @interests = apply_scopes(Interest.where('user_id != ?', current_user.id).includes(:user))
   end
 
+  def participate
+    interest = Interest.find params[:id]
+    interest.participants << current_user
+
+    redirect_to interests_path
+  end
+
   def permitted_params
     params.require(:interest).permit(:local, :format, :datetime)
   end
