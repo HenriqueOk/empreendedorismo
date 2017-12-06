@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :championships
 
-  resources :interests, only: [:index]
+  resources :interests, only: [:index, :new, :create]
 
   resources :brackets, only: [] do
     member do
