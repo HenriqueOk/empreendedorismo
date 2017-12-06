@@ -9,24 +9,7 @@ class ChampionshipsController < ApplicationController
   end
 
   def index
-    @championships = Array.new
-
-    participations = Participant.where(user_id: current_user.id)
-
-    participations.each do |participation|
-      # if participation.championship.user_id != current_user.id
-        @championships << participation.championship
-      # end
-    end
-
-    #Informacoes de Ranking
-    @rank = current_user.ranking
-
-    if @rank == nil
-      @rank = Ranking.new(user_id: current_user.id, played_games: 0, scheduled_games: 0, victories: 0, draws: 0, defeats: 0, points: 0, wins: 0, position: Ranking.count+1)
-      @rank.save
-    end
-
+    @interests = Interest.where(user: current_user).includes(:user)
   end
 
   def new
