@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  *= require devise_bootstrap_views
+ *= require template
+ 
  */
 
 // http://www.flaticon.com/free-icon/horse-black-head-silhouette-of-a-chess-piece_36189
@@ -26,39 +28,6 @@
 @import "brackets";
 @import "championships";
 
-.navbar {
-  border-radius: 0;
-  background-color: $base_color;
-  border: 0;
-  color: #FFFFFF;
-  div ul li {
-    :hover{
-      background-color: $secondary_color;
-    }
-    &.active, &.active :hover{
-      background-color: #FFFFFF;
-      a {
-        color: $base_color;
-      }
-    }
-  }
-
-  a {
-      color: #FFFFFF;
-    }
-
-  .logo {
-    height: 40px;
-    margin: 5px 0px;
-  }
-
-  .logo-link{
-    font-family: Arial;
-    margin-right: 10px;
-    font-weight: bold;
-    font-size: 18px;
-  }
-}
 .nopadding {
 padding-left: 0px;
 padding-right: 0px;

@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require app
+//= require views/main
+//= require views/charts
+//= require views/widgets
