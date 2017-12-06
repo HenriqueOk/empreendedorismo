@@ -4,7 +4,7 @@ class InterestsController < ApplicationController
   has_scope :by_local
 
   def index
-    @interests = apply_scopes(Interest.all.includes(:user))
+    @interests = apply_scopes(current_user.interests)
   end
 
   def new
@@ -13,9 +13,10 @@ class InterestsController < ApplicationController
 
   def create
     @interest = Interest.new(permitted_params)
-    @interest.user_id = current_user.id
+    @interest.user = current_user
 
     if @interest.save
+      @interest.participants << current_user
       redirect_to interests_path
       flash[:success] = "Interesse adicionado"
     else

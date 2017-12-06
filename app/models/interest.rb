@@ -1,5 +1,6 @@
 class Interest < ApplicationRecord
   belongs_to :user
+  has_and_belongs_to_many :participants, class_name: 'User'
 
   scope :by_format, -> (format) do
     where('lower(format) LIKE ?', "%#{format.downcase}%")

@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :participants
   has_many :championship_ids, through: :participants, foreign_key: "championship_id", class_name: "Championship"
   has_one :ranking
-
+  has_and_belongs_to_many :interests
   accepts_nested_attributes_for :participants
 
   devise :database_authenticatable, :registerable,
